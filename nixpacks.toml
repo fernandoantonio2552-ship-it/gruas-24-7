@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php82"]
+nixPkgs = ["php"]
 
 [start]
-cmd = "sh start.sh"
+cmd = "php -S 0.0.0.0:$PORT"
