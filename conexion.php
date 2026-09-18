@@ -1,17 +1,22 @@
 <?php
 
-$servidor = "localhost";
-$usuario = "root";
-$contrasena = "";
-$base_datos = "gruas_24_7";
+$host = getenv('MYSQLHOST');
+$usuario = getenv('MYSQLUSER');
+$contrasena = getenv('MYSQLPASSWORD');
+$base_datos = getenv('MYSQLDATABASE');
+$puerto = (int) getenv('MYSQLPORT');
 
-$conexion = new mysqli($servidor, $usuario, $contrasena, $base_datos);
+$conn = new mysqli(
+    $host,
+    $usuario,
+    $contrasena,
+    $base_datos,
+    $puerto
+);
 
-if ($conexion->connect_error) {
-    die("Error de conexion: " . $conexion->connect_error);
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
 
-$conexion->set_charset("utf8mb4");
-
-
+$conn->set_charset("utf8mb4");
 ?>
