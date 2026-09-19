@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $rol = "usuario";
 
-    $sql = "INSERT INTO usuarios (nombre, correo, password, rol)
+    $sql = "INSERT INTO usuarios (nombre, correo, contraseña, rol)
             VALUES (?, ?, ?, ?)";
 
     $stmt = $conexion->prepare($sql);
