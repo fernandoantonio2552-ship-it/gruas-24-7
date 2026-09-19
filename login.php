@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST["correo"];
     $password = $_POST["password"];
 
-    $sql = "SELECT id, nombre, correo, password, rol
+    $sql = "SELECT id, nombre, correo, contraseña, rol
             FROM usuarios
             WHERE correo = ?";
 
