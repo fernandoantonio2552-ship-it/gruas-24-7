@@ -4,9 +4,9 @@ $host = getenv('MYSQLHOST');
 $usuario = getenv('MYSQLUSER');
 $contrasena = getenv('MYSQLPASSWORD');
 $base_datos = getenv('MYSQLDATABASE');
-$puerto = (int) getenv('MYSQLPORT');
+$puerto = (int)getenv('MYSQLPORT');
 
-$conn = new mysqli(
+$conexion = new mysqli(
     $host,
     $usuario,
     $contrasena,
@@ -14,9 +14,9 @@ $conn = new mysqli(
     $puerto
 );
 
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
-$conn->set_charset("utf8mb4");
+$conexion->set_charset("utf8mb4");
 ?>
